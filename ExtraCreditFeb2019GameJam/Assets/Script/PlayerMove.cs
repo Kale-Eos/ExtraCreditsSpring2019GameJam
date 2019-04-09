@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlayerMove : MonoBehaviour
     public float LowFallmultiplier;                 // gravity with jump released
     public float jumpVelocity;                      // jump strength
     public Vector3 startingPosition;                // spawn location
+    public float deathHeight;                       // deadzone position
+
     public bool thisDoesNothing = false;
 
     [Range(1, 10)]
@@ -24,14 +27,14 @@ public class PlayerMove : MonoBehaviour
     //bool grounded;
 
     Vector2 playerSize;
-    // Vector2 boxSize;
+    //Vector2 boxSize;
 
 
-    // void Awake()
-    // {
-        // playerSize = GetComponent<CapsuleCollider2D>().size;
-        // boxSize = new Vector2(playerSize.x, groundedSkin);
-    // }
+    //void Awake()
+    //{
+    //    playerSize = GetComponent<CapsuleCollider2D>().size;
+    //    boxSize = new Vector2(playerSize.x, groundedSkin);
+    //}
 
     void Start()
     {
@@ -66,16 +69,32 @@ public class PlayerMove : MonoBehaviour
         }
 
         // restart conditions
-        if (this.gameObject.transform.position.y <= -10)
+        if (this.gameObject.transform.position.y <= deathHeight)
         {
+            //if (scenemanager.scenecountinbuildsettings = 1)
+            //{
+            //    debug.log("done");
+            //}
+            audioManager.PlaySound("ShootingStars");
             Respawn();
         }
-        if (this.gameObject.transform.position.y >= -10 && Input.GetKeyDown("r"))
+
+        if (this.gameObject.transform.position.y >= deathHeight && Input.GetKeyDown("r"))
         {
             Respawn();
             Debug.Log("response");
         }
+
+        //if (Input.GetKeyDown("r"))
+        //{
+        //    Respawn();
+        //}
     }
+
+    //IEnumerator ShootStarLevel1()
+    //{
+
+    //}
 
     public void Respawn()
     {
@@ -86,8 +105,8 @@ public class PlayerMove : MonoBehaviour
     {
         // move parameters
         float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0);
+     //   float moveVertical = Input.GetAxis("Vertical");           // makes an infinite float jump -- no
+        Vector3 movement = new Vector3(moveHorizontal, 0, 0);       // Vector3(moveHorizontal, moveVertical, 0);  // infinite float jump
         rb.AddForce(movement * speed * Time.deltaTime);
 
         // fixed jump conditions
@@ -97,14 +116,14 @@ public class PlayerMove : MonoBehaviour
             jumpRequest = false;
             //grounded = false;
         }
-        // else
-        // {
-            // Vector2 rayStart = (Vector2)transform.position + Vector2.down * playerSize.y * 0.5f;
-            // grounded = Physics2D.Raycast (rayStart, Vector2.down, groundedSkin, mask);
+        //else
+        //{
+        //    Vector2 rayStart = (Vector2)transform.position + Vector2.down * playerSize.y * 0.5f;
+        //    grounded = Physics2D.Raycast(rayStart, Vector2.down, groundedSkin, mask);
 
-            // Vector2 boxCenter = (Vector2)transform.position + Vector2.down * (playerSize.y * boxSize.y) * 0.5f;
-            // grounded = (Physics2D.OverlapBox(boxCenter, boxSize, 0f, mask) !=null);
-        // }
+        //    Vector2 boxCenter = (Vector2)transform.position + Vector2.down * (playerSize.y * boxSize.y) * 0.5f;
+        //    grounded = (Physics2D.OverlapBox(boxCenter, boxSize, 0f, mask) != null);
+        //}
     }
 
     // ground contact

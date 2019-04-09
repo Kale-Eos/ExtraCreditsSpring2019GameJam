@@ -48,45 +48,75 @@ MonoBehaviour:
   - name: Music
     clip: {fileID: 8300000, guid: 5f6306c782474ea4ca969b88d6b636f1, type: 3}
     volume: 0.2
-    pitch: 1
+    tempo: 1
     RandomVolume: 0
-    RandomPitch: 0
+    RandomTempo: 0
     loop: 1
-  - name: Tutorial_BGM
-    clip: {fileID: 8300000, guid: 954bf88ffc22897408f9b5274599b2df, type: 3}
-    volume: 0
-    pitch: 0
-    RandomVolume: 0
-    RandomPitch: 0
-    loop: 1
+    doesnothing: 1
   - name: Level1_BGM
     clip: {fileID: 8300000, guid: ae9856bf0ac6c6849a27fa8a48ef5e04, type: 3}
     volume: 0.3
-    pitch: 1
+    tempo: 1
     RandomVolume: 0.1
-    RandomPitch: 0
+    RandomTempo: 0
     loop: 1
+    doesnothing: 1
+  - name: Level2_BGM
+    clip: {fileID: 8300000, guid: ddb4ab7d88a95c640abcd82a9545f119, type: 3}
+    volume: 0.3
+    tempo: 1
+    RandomVolume: 0.1
+    RandomTempo: 0
+    loop: 1
+    doesnothing: 1
   - name: ButtonHover
     clip: {fileID: 8300000, guid: ff08a0ac0c8198646849f649558cbd46, type: 3}
     volume: 0.1
-    pitch: 1
+    tempo: 1
     RandomVolume: 0.25
-    RandomPitch: 0.5
+    RandomTempo: 0
     loop: 0
+    doesnothing: 1
   - name: ButtonPress
     clip: {fileID: 8300000, guid: ff08a0ac0c8198646849f649558cbd46, type: 3}
     volume: 0.2
-    pitch: 1
+    tempo: 1
     RandomVolume: 0.2
-    RandomPitch: 0.5
+    RandomTempo: 0
     loop: 0
+    doesnothing: 1
   - name: JumpSound
     clip: {fileID: 8300000, guid: 492c22bfaff253249be3b9574676513f, type: 3}
     volume: 0.4
-    pitch: 1
+    tempo: 1
     RandomVolume: 0.1
-    RandomPitch: 0.5
+    RandomTempo: 0
     loop: 0
+    doesnothing: 0
+  - name: FreeRoam
+    clip: {fileID: 8300000, guid: 7539b5cc68c9a3541a9009200aae5a06, type: 3}
+    volume: 0.1
+    tempo: 1
+    RandomVolume: 0.1
+    RandomTempo: 0
+    loop: 1
+    doesnothing: 1
+  - name: ShootingStars
+    clip: {fileID: 8300000, guid: 627f098e8dc3a344a85c9c00fa403848, type: 3}
+    volume: 1
+    tempo: 1
+    RandomVolume: 0
+    RandomTempo: 0
+    loop: 0
+    doesnothing: 1
+  - name: Level3_BGM
+    clip: {fileID: 8300000, guid: 954bf88ffc22897408f9b5274599b2df, type: 3}
+    volume: 0.3
+    tempo: 1.5
+    RandomVolume: 0
+    RandomTempo: 0
+    loop: 0
+    doesnothing: 1
 --- !u!81 &5078807568902014005
 AudioListener:
   m_ObjectHideFlags: 0

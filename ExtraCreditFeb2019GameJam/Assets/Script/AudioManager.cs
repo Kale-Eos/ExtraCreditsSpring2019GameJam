@@ -9,12 +9,13 @@ public class Sound
     [Range(0f, 1f)]                 // range of volume from 0-100%
     public float volume = 1f;       // auto set to 100%
     [Range(0.1f, 3f)]               // range of sound speed from 10-300%
-    public float pitch = 1f;        // auto set to 100%
+    public float tempo = 1f;        // auto set to 100%
     [Range(0f, 0.5f)]               // range of 0-50% fluctuation
     public float RandomVolume;      // randomizes sound volume
     [Range(0f, 0.5f)]               // range of 0-50% fluctuation
-    public float RandomPitch;       // randomizes sound speed
+    public float RandomTempo;       // randomizes sound speed
     public bool loop = false;       // option for looping
+    public bool doesnothing = false;    // does exactly what it is called
 
     private AudioSource source;
 
@@ -28,7 +29,7 @@ public class Sound
     public void Play()
     {
         source.volume = volume * (1 + Random.Range(-RandomVolume / 2f, RandomVolume / 2f));     // volume control with random volume fluctuation
-        source.pitch = pitch * (1 + Random.Range(-RandomPitch / 2f, RandomPitch / 2f));         // pitch control with random pitch fluctuation 
+        source.pitch = tempo * (1 + Random.Range(-RandomTempo / 2f, RandomTempo / 2f));         // pitch control with random pitch fluctuation 
 
         source.Play();                                                                          // plays sound
     }
@@ -52,14 +53,14 @@ public class AudioManager : MonoBehaviour
         if (instance != null)
         {
             // Debug.LogError("More than one AudioManager in scene.");
-            if (instance != this)
+            if (instance != this)               // if audiomanager is not same as old audiomanager
             {
-                Destroy(this.gameObject);
+                Destroy(this.gameObject);       // destroy the new one
             }
         }
         else
         {
-            instance = this;
+            instance = this;                    // otherwise
             DontDestroyOnLoad(this);
         }
     }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6126725596101770464}
   - component: {fileID: 6126725596101770466}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Foot (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6126725596339518022}
   - component: {fileID: 6126725596339518040}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Foot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,9 +171,10 @@ GameObject:
   - component: {fileID: 6126725596405390513}
   - component: {fileID: 6126725596405390527}
   - component: {fileID: 6126725596405390512}
-  m_Layer: 8
+  - component: {fileID: 1494538963}
+  m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,7 +186,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6126725596405390526}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.5, y: 3.9499998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -236,7 +237,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: 323c748d1d287f145b67ae51e2d6d219, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -285,6 +286,9 @@ MonoBehaviour:
   Fallmultiplier: 5
   LowFallmultiplier: 15
   jumpVelocity: 10
+  startingPosition: {x: 0, y: 0, z: 0}
+  deathHeight: -20
+  thisDoesNothing: 1
   groundedSkin: 0.5
   mask:
     serializedVersion: 2
@@ -305,6 +309,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 2.25, y: 2.25}
   m_Direction: 0
+--- !u!114 &1494538963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6126725596405390526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a97b3e085eb3e409aad29994fe9af5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
 --- !u!1 &6126725596478970183
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6126725596478970200}
   - component: {fileID: 6126725596478970202}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +413,7 @@ GameObject:
   - component: {fileID: 6126725596595035290}
   - component: {fileID: 6126725596595035292}
   - component: {fileID: 6126725596595035291}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Trail (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -538,7 +555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6126725596817173676}
   - component: {fileID: 6126725596817173678}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Foot (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +634,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6126725596856487087}
   - component: {fileID: 6126725596856487073}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Right Limb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -697,7 +714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6126725596960219792}
   - component: {fileID: 6126725596960219794}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -777,7 +794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6126725597136844501}
   - component: {fileID: 6126725597136844503}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Left Limb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -858,7 +875,7 @@ GameObject:
   - component: {fileID: 6126725597272436960}
   - component: {fileID: 6126725597272436962}
   - component: {fileID: 6126725597272436961}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1000,7 +1017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6126725597306515858}
   - component: {fileID: 6126725597306515860}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Foot (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1080,7 +1097,7 @@ GameObject:
   - component: {fileID: 6126725597496485125}
   - component: {fileID: 6126725597496485127}
   - component: {fileID: 6126725597496485126}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Trail (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1223,7 +1240,7 @@ GameObject:
   - component: {fileID: 6126725597895781535}
   - component: {fileID: 6126725597895781521}
   - component: {fileID: 6126725597895781520}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Trail (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

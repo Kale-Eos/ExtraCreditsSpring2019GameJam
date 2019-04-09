@@ -3898,11 +3898,12 @@ GameObject:
   m_Component:
   - component: {fileID: 297372139}
   - component: {fileID: 297372138}
-  - component: {fileID: 297372140}
   - component: {fileID: 297372141}
+  - component: {fileID: 297372142}
+  - component: {fileID: 297372140}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Wall
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3981,10 +3982,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 297372137}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d46755f85cbc2043a22e97f476c97f2, type: 3}
+  m_Script: {fileID: 11500000, guid: fbc08975d3a34c54b835af676ad95c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: TitleScene
+  anim: {fileID: 1897090843}
+  sceneName1: Level1
+  sceneName2: Level2
+  sceneNameFree: FreeRoam
 --- !u!61 &297372141
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4011,6 +4015,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &297372142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297372137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d46755f85cbc2043a22e97f476c97f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Level3
 --- !u!1 &300308482
 GameObject:
   m_ObjectHideFlags: 0
@@ -4598,11 +4615,11 @@ RectTransform:
   m_Father: {fileID: 2130728622}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 362, y: 234}
-  m_SizeDelta: {x: 250, y: 250}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 300, y: 300}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &384082720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5276,18 +5293,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &437695930 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5078807568902014007, guid: 33df45031a11b7549be71875e674b42d,
-    type: 3}
-  m_PrefabInstance: {fileID: 5078807569560687035}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d9494233d6d5a04a89ab4688c2c8e02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &438778743
 GameObject:
   m_ObjectHideFlags: 0
@@ -9586,19 +9591,21 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'A - Roll body
+  m_Text: 'A - Accelerates body to left, slows down acceleration from right
 
-    D - Roll body
+    D - Accelerates body to right, slows down acceleration from left
 
     Space - Jump (tap for short hop, hold for sustained jump)
 
-    R - manually rest
+    R - manual reset
 
     Escape - Pause
 
 
-    *Note: Acceleration and gravity will be reflected on your inputs and will affect
-    you physically.'
+
+    *Important Note:
+
+    Inputs affect acceleration and gravity. It will also affect gameplay.'
 --- !u!222 &761632341
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11063,7 +11070,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881601434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 191.8, y: 31.8, z: -10}
+  m_LocalPosition: {x: 0, y: -3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12321,7 +12328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968242619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 191.8, y: 31.8, z: -10}
+  m_LocalPosition: {x: 0, y: -3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 610504938}
@@ -15908,39 +15915,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1610663488}
-        m_MethodName: Loader
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 437695930}
-        m_MethodName: PlaySound
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Music
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 437695930}
-        m_MethodName: StopSound
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Level1_BGM
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1610663491}
         m_MethodName: OnMouseDown
         m_Mode: 1
@@ -16010,6 +15984,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1610663491}
           m_MethodName: OnMouseOver
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1610663493}
+          m_MethodName: BackToMainMenu1
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -17116,25 +17107,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1494538958 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6126725596405390526, guid: a8ea2e7a31555314883d013d187992b4,
-    type: 3}
-  m_PrefabInstance: {fileID: 6126725595983415144}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1494538963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1494538958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a97b3e085eb3e409aad29994fe9af5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 2000316417}
 --- !u!1 &1495968657
 GameObject:
   m_ObjectHideFlags: 0
@@ -18698,10 +18670,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1610663492}
   - component: {fileID: 1610663491}
-  - component: {fileID: 1610663490}
-  - component: {fileID: 1610663489}
-  - component: {fileID: 1610663488}
   - component: {fileID: 1610663493}
+  - component: {fileID: 1610663488}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -18718,39 +18688,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1610663487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 513aecbdaa77263458e412762b01caf4, type: 3}
+  m_Script: {fileID: 11500000, guid: fbc08975d3a34c54b835af676ad95c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1897090843}
-  sceneName: TitleScene
---- !u!114 &1610663489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610663487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edd0054bf7e3a2c479d46a9bebe30c2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 1897090843}
-  sceneName: Level2
---- !u!114 &1610663490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610663487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4d48ed351c2ae94695002ed7e327c5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 1897090843}
-  sceneName: Level1
+  sceneName1: Level1
+  sceneName2: Level2
+  sceneNameFree: FreeRoam
 --- !u!114 &1610663491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18766,6 +18710,11 @@ MonoBehaviour:
   anim: {fileID: 0}
   hoverOverSound: ButtonHover
   pressButtonSound: ButtonPress
+  music: Music
+  level1_bgm: Level1_BGM
+  level2_bgm: Level2_BGM
+  freeRoam: FreeRoam
+  shootingStars: ShootingStars
 --- !u!4 &1610663492
 Transform:
   m_ObjectHideFlags: 0
@@ -18792,6 +18741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa89d5e8b0c56be489d90e79beb2b81c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: TitleScene
   pauseUI: {fileID: 1579536290}
 --- !u!1 &1638222730
 GameObject:
@@ -23893,12 +23843,12 @@ PrefabInstance:
     - target: {fileID: 6126725596158054536, guid: a8ea2e7a31555314883d013d187992b4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 191.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6126725596158054536, guid: a8ea2e7a31555314883d013d187992b4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 31.8
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 6126725596158054536, guid: a8ea2e7a31555314883d013d187992b4,
         type: 3}
@@ -23945,35 +23895,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6126725596405390514, guid: a8ea2e7a31555314883d013d187992b4,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6126725596405390527, guid: a8ea2e7a31555314883d013d187992b4,
-        type: 3}
-      propertyPath: doesNothingLol
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6126725596405390527, guid: a8ea2e7a31555314883d013d187992b4,
-        type: 3}
-      propertyPath: boolThatDoesNothingLol
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6126725596405390527, guid: a8ea2e7a31555314883d013d187992b4,
-        type: 3}
-      propertyPath: thisDoesNothingLol
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6126725596405390527, guid: a8ea2e7a31555314883d013d187992b4,
-        type: 3}
-      propertyPath: thisDoesNothing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6126725596405390527, guid: a8ea2e7a31555314883d013d187992b4,
-        type: 3}
-      propertyPath: startingPosition.y
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 1494538963, guid: a8ea2e7a31555314883d013d187992b4, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 2000316417}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8ea2e7a31555314883d013d187992b4, type: 3}

@@ -22,63 +22,80 @@ public class MenuController : MonoBehaviour
     // UI Sound Control ////////////////////////////////////////////////////////////////////////////////////
     [SerializeField]                                        // instantiates field
     string hoverOverSound = "ButtonHover";                  // instantiates Hover Over Sound
-    [SerializeField]                                        // instantiates field
+    [SerializeField]
     string pressButtonSound = "ButtonPress";                // instantiates Press Button Sound
+    [SerializeField]
+    string music = "Music";                                 // instantiates title bgm
+    [SerializeField]
+    string level1_bgm = "Level1_BGM";                       // instantiates Level 1 BGM
+    [SerializeField]
+    string level2_bgm = "Level2_BGM";                       // instantiates Level 2 BGM
+    [SerializeField]
+    string freeRoam = "FreeRoam";                           // instantiates Free Roam BGM
+    [SerializeField]
+    string shootingStars = "ShootingStars";                 // instantiates the mistake
 
     public void OnMouseOver()
     {
-        audioManager.PlaySound(hoverOverSound);             // all buttons makes a sound when hovering
+        audioManager.PlaySound(hoverOverSound);             // makes a sound when hovering
     }
 
     public void OnMouseDown()
     {
-        audioManager.PlaySound(pressButtonSound);           // all buttons makes a sound when pressed
+        audioManager.PlaySound(pressButtonSound);           // makes a sound when pressed
+    }
+
+    public void PlayMusic()
+    {
+        audioManager.PlaySound(music);                      // Plays title bgm
+    }
+
+    public void StopMusic()
+    {
+        audioManager.StopSound(music);                      // Stops title bgm
+    }
+
+    public void PlayLevel1_BGM()
+    {
+        audioManager.PlaySound(level1_bgm);                 // Plays Level 1 bgm
+    }
+
+    public void StopLevel1_BGM()
+    {
+        audioManager.StopSound(level1_bgm);                 // Stops Level 1 bgm
+    }
+
+    public void PlayLevel2_BGM()
+    {
+        audioManager.PlaySound(level2_bgm);                 // Plays Level 2 bgm
+    }
+
+    public void StopLevel2_BGM()
+    {
+        audioManager.StopSound(level2_bgm);                 // Stops Level 2 bgm
+    }
+
+    public void PlayFreeRoam_BGM()
+    {
+        audioManager.PlaySound(freeRoam);                   // Plays Free Roam bgm
+    }
+    public void StopFreeRoam_BGM()
+    {
+        audioManager.StopSound(freeRoam);                   // Stop Free Roam bgm
     }
 
     // Level BGM Control ///////////////////////////////////////////////////////////////////////////////////
-    public void PlayLevel1()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);       // loads onto the tutorial scene
-        audioManager.PlaySound("Level1_BGM");                                       // Plays Level1_BGM
-        audioManager.StopSound("Music");                                            // Stops main menu music
-    }
-
-    public void PlayLevel2()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);       // loads onto the tutorial scene
-        audioManager.PlaySound("Level2_BGM");                                       // Plays Level2_BGM
-        audioManager.StopSound("Music");                                            // Stops main menu music
-    }
-
-    public void PlayLevel3()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);       // loads onto the tutorial scene
-        audioManager.PlaySound("Level3_BGM");                                       // Plays Level1_BGM
-        audioManager.StopSound("Music");                                            // Stops main menu music
-    }
-
-    //   public void PlayCredits()
-    //   {
-    //       audioManager.StopSound("Music");            // Stops main menu music
-    //       audioManager.StopSound("Level1_BGM");       // Stops level 1 music
-    //   }
-
-    //    public void CreditsTransition()
-    //    {
-    //        audioManager.StopSound("Music");            // Stops main menu music
-    //        audioManager.StopSound("Level1_BGM");       // Stops level 1 music
-    //        audioManager.PlaySound("Credits_BGM");      // Plays Credits_BGM
-    //    }
-
 
     public void BackToMainMenu()
     {
+        audioManager.StopSound("ShootingStars");
         audioManager.StopSound("Level1_BGM");       // Stops level 1 music
         audioManager.PlaySound("Music");            // Restarts main menu music
     }
 
     public void CreditsToMainMenu()
     {
+        audioManager.StopSound("ShootingStars");
         audioManager.StopSound("Credits_BGM");       // Stop playing Credits_BGM
         audioManager.PlaySound("Music");             // Restarts main menu music
     }
