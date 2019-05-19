@@ -2589,6 +2589,10 @@ MonoBehaviour:
   music: Music
   level1_bgm: Level1_BGM
   level2_bgm: Level2_BGM
+  level3_bgm: Level3_BGM
+  level4_bgm: Level4_BGM
+  level5_bgm: Level5_BGM
+  level6_bgm: Level6_BGM
   freeRoam: FreeRoam
   shootingStars: ShootingStars
 --- !u!4 &924272864
@@ -2621,6 +2625,9 @@ MonoBehaviour:
   sceneName1: Level1
   sceneName2: Level2
   sceneName3: Level3
+  sceneName4: Level4
+  sceneName5: Level5
+  sceneName6: Level6
   sceneNameFree: FreeRoam
 --- !u!1 &977466844
 GameObject:
@@ -3084,7 +3091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1331870301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4760,7 +4767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2117003875
 RectTransform:
   m_ObjectHideFlags: 0
