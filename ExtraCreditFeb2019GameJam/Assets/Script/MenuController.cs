@@ -31,6 +31,14 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     string level2_bgm = "Level2_BGM";                       // instantiates Level 2 BGM
     [SerializeField]
+    string level3_bgm = "Level3_BGM";                       // instantiates Level 3 BGM
+    [SerializeField]
+    string level4_bgm = "Level4_BGM";                       // instantiates Level 4 BGM
+    [SerializeField]
+    string level5_bgm = "Level5_BGM";                       // instantiates Level 5 BGM
+    [SerializeField]
+    string level6_bgm = "Level6_BGM";                       // instantiates Level 6 BGM
+    [SerializeField]
     string freeRoam = "FreeRoam";                           // instantiates Free Roam BGM
     [SerializeField]
     string shootingStars = "ShootingStars";                 // instantiates the mistake
@@ -74,6 +82,48 @@ public class MenuController : MonoBehaviour
     {
         audioManager.StopSound(level2_bgm);                 // Stops Level 2 bgm
     }
+
+    public void PlayLevel3_BGM()
+    {
+        audioManager.PlaySound(level3_bgm);                 // Plays Level 2 bgm
+    }
+
+    public void StopLevel3_BGM()
+    {
+        audioManager.StopSound(level3_bgm);                 // Stops Level 2 bgm
+    }
+
+    public void PlayLevel4_BGM()
+    {
+        audioManager.PlaySound(level4_bgm);                 // Plays Level 2 bgm
+    }
+
+    public void StopLevel4_BGM()
+    {
+        audioManager.StopSound(level4_bgm);                 // Stops Level 2 bgm
+    }
+
+
+    public void PlayLevel5_BGM()
+    {
+        audioManager.PlaySound(level3_bgm);                 // Plays Level 2 bgm
+    }
+
+    public void StopLevel5_BGM()
+    {
+        audioManager.StopSound(level5_bgm);                 // Stops Level 2 bgm
+    }
+
+    public void PlayLevel6_BGM()
+    {
+        audioManager.PlaySound(level6_bgm);                 // Plays Level 2 bgm
+    }
+
+    public void StopLevel6_BGM()
+    {
+        audioManager.StopSound(level6_bgm);                 // Stops Level 2 bgm
+    }
+
 
     public void PlayFreeRoam_BGM()
     {

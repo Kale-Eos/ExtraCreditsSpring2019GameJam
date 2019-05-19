@@ -68,6 +68,42 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;                        // time is unfrozen
         audioManager.StopSound("ShootingStars");    // stops Shooting Stars
+        audioManager.StopSound("Level3_BGM");       // Stop Level3 Music
+        audioManager.PlaySound("Music");            // Restarts main menu music
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void BackToMainMenu4()
+    {
+        Time.timeScale = 1f;                        // time is unfrozen
+        audioManager.StopSound("ShootingStars");    // stops Shooting Stars
+        audioManager.StopSound("Level4_BGM");       // Stop Level4 Music
+        audioManager.PlaySound("Music");            // Restarts main menu music
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void BackToMainMenu5()
+    {
+        Time.timeScale = 1f;                        // time is unfrozen
+        audioManager.StopSound("ShootingStars");    // stops Shooting Stars
+        audioManager.StopSound("Level5_BGM");       // Stop Level5 Music
+        audioManager.PlaySound("Music");            // Restarts main menu music
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void BackToMainMenu6()
+    {
+        Time.timeScale = 1f;                        // time is unfrozen
+        audioManager.StopSound("ShootingStars");    // stops Shooting Stars
+        audioManager.StopSound("Level6_BGM");       // Stop Level6 Music
+        audioManager.PlaySound("Music");            // Restarts main menu music
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void BackToMainMenuFreeRoam()
+    {
+        Time.timeScale = 1f;                        // time is unfrozen
+        audioManager.StopSound("ShootingStars");    // stops Shooting Stars
         audioManager.StopSound("FreeRoam");         // Stop Free Roam Music
         audioManager.PlaySound("Music");            // Restarts main menu music
         SceneManager.LoadScene(sceneName);
