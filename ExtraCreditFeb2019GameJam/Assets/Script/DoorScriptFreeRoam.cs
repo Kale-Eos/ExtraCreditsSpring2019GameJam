@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DoorScript2 : MonoBehaviour
+public class DoorScriptFreeRoam : MonoBehaviour
 {
     public string sceneName;
     AudioManager audioManager;
@@ -16,8 +16,8 @@ public class DoorScript2 : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         audioManager.StopSound("ShootingStars");
-        audioManager.StopSound("Level2_BGM");
-        audioManager.PlaySound("Level3_BGM");
+        audioManager.StopSound("FreeRoam");
+        audioManager.PlaySound("Music");
 
         if (other.gameObject.CompareTag("Player"))
         {

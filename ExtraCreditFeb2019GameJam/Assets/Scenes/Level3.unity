@@ -5725,6 +5725,7 @@ GameObject:
   - component: {fileID: 930019552}
   - component: {fileID: 930019551}
   - component: {fileID: 930019550}
+  - component: {fileID: 930019549}
   m_Layer: 0
   m_Name: Door
   m_TagString: Player
@@ -5732,6 +5733,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &930019549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930019548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94bf1c61326d2d544acd2c8f2b7d1bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
 --- !u!114 &930019550
 MonoBehaviour:
   m_ObjectHideFlags: 0
