@@ -3999,6 +3999,9 @@ MonoBehaviour:
   sceneName1: Level1
   sceneName2: Level2
   sceneName3: Level3
+  sceneName4: Level4
+  sceneName5: Level5
+  sceneName6: Level6
   sceneNameFree: FreeRoam
 --- !u!61 &297372141
 BoxCollider2D:
@@ -16018,7 +16021,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1610663493}
-          m_MethodName: BackToMainMenu1
+          m_MethodName: BackToMainMenuFreeRoam
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -18714,6 +18717,9 @@ MonoBehaviour:
   sceneName1: Level1
   sceneName2: Level2
   sceneName3: Level3
+  sceneName4: Level4
+  sceneName5: Level5
+  sceneName6: Level6
   sceneNameFree: FreeRoam
 --- !u!114 &1610663491
 MonoBehaviour:
@@ -18733,6 +18739,10 @@ MonoBehaviour:
   music: Music
   level1_bgm: Level1_BGM
   level2_bgm: Level2_BGM
+  level3_bgm: Level3_BGM
+  level4_bgm: Level4_BGM
+  level5_bgm: Level5_BGM
+  level6_bgm: Level6_BGM
   freeRoam: FreeRoam
   shootingStars: ShootingStars
 --- !u!4 &1610663492
@@ -23113,7 +23123,7 @@ GameObject:
   - component: {fileID: 2105735874}
   - component: {fileID: 2105735873}
   m_Layer: 5
-  m_Name: COntrolMenu
+  m_Name: ControlMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
